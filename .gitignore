@@ -20,6 +20,8 @@ backend/.data/
 # Node / Next.js
 node_modules/
 frontend/.next/
+frontend/.npm-cache/
 frontend/out/
 frontend/.env*
+*.tsbuildinfo
 
