@@ -1,0 +1,256 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  color: #111827;
+  background: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  background: #fff;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.row > * {
+  flex: 1 1 auto;
+}
+
+.btn {
+  border: 1px solid #d1d5db;
+  background: #111827;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn.secondary {
+  background: #fff;
+  color: #111827;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+  vertical-align: top;
+  font-size: 13px;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.measureRow {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.measureIdx {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: #6b7280;
+  padding-top: 6px;
+}
+
+.tabBlock {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.tabHeader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.chordLabel {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+  padding: 2px 6px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.tabMeasure {
+  position: relative;
+  --subdiv: 16;
+  margin-top: 6px;
+}
+
+.tabChords {
+  display: grid;
+  grid-template-columns: repeat(var(--subdiv), 1fr);
+  gap: 0;
+  margin-bottom: 4px;
+  min-height: 18px;
+}
+
+.tabChordCell {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 2px;
+}
+
+.tabGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--subdiv), 1fr);
+  height: 64px;
+  border-left: 2px solid #111827;
+  border-right: 2px solid #111827;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.tabGrid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#111827, #111827),
+    linear-gradient(#111827, #111827),
+    linear-gradient(#111827, #111827),
+    linear-gradient(#111827, #111827),
+    linear-gradient(#111827, #111827),
+    linear-gradient(#111827, #111827);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 8px, 0 18px, 0 28px, 0 38px, 0 48px, 0 58px;
+  pointer-events: none;
+}
+
+.tabCell {
+  position: relative;
+}
+
+.tabCell::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background: rgba(17, 24, 39, 0.08);
+}
+
+.hit {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 8px;
+  bottom: 6px;
+  width: 2px;
+  background: #111827;
+  opacity: 0.9;
+}
+
+.du {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 11px;
+  color: #111827;
+}
+
+.lyricLine {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.chordDiagrams {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.diagram {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 6px;
+  background: #fff;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+  .card {
+    border: none;
+    padding: 0;
+  }
+  th,
+  td {
+    font-size: 11px;
+  }
+}

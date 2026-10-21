@@ -1,0 +1,16 @@
+fastapi>=0.110
+uvicorn[standard]>=0.27
+pydantic>=2.6
+python-multipart>=0.0.9
+
+# Optional async execution (recommended for non-dev usage)
+celery>=5.3
+redis>=5.0
+
+# Signal processing (fallback pipeline uses only numpy/scipy; librosa is optional)
+numpy>=1.26
+scipy>=1.11
+
+# Guitar Pro 5 tablature export
+pyguitarpro>=0.10
+
